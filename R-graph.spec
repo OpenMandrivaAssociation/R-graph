@@ -24,6 +24,7 @@ BuildRequires:    R-XML R-RUnit R-cluster
 %else
 BuildRequires:    R-SparseM R-XML R-RBGL R-RUnit R-cluster 
 %endif
+BuildRequires:    x11-server-xvfb
 
 %description
 A package that implements some simple graph handling capabilities.
@@ -41,7 +42,7 @@ rm -f %{buildroot}%{rlibdir}/R.css
 
 %if %{without bootstrap}
 %check
-%{_bindir}/R CMD check %{packname}
+xvfb-run %{_bindir}/R CMD check %{packname}
 %endif
 
 %files
