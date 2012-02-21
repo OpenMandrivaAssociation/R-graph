@@ -1,10 +1,10 @@
-%bcond_without bootstrap
+%bcond_with bootstrap
 %global packname  graph
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
 Version:          1.32.0
-Release:          1
+Release:          2
 Summary:          graph: A package to handle graph data structures
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
