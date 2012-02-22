@@ -10,19 +10,14 @@ Group:            Sciences/Mathematics
 License:          Artistic-2.0
 URL:              http://bioconductor.org/packages/release/bioc/html/%{packname}.html
 Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/%{packname}_%{version}.tar.gz
-Requires:         R-methods 
-Requires:         R-methods R-stats R-tools R-utils 
-%if %{with bootstrap}
-Requires:         R-XML R-RUnit R-cluster 
-%else
-Requires:         R-SparseM R-XML R-RBGL R-RUnit R-cluster 
+Requires:         R-methods R-stats R-tools R-utils R-XML R-RUnit R-cluster
+%if %{without bootstrap}
+Requires:         R-SparseM R-RBGL
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods
-BuildRequires:    R-methods R-stats R-tools R-utils 
-%if %{with bootstrap}
-BuildRequires:    R-XML R-RUnit R-cluster 
-%else
-BuildRequires:    R-SparseM R-XML R-RBGL R-RUnit R-cluster 
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex
+BuildRequires:    R-methods R-stats R-tools R-utils R-XML R-RUnit R-cluster
+%if %{without bootstrap}
+BuildRequires:    R-SparseM R-RBGL
 %endif
 BuildRequires:    x11-server-xvfb
 
