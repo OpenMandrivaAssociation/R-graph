@@ -1,4 +1,4 @@
-%bcond_with bootstrap
+%bcond_without bootstrap
 %global packname  graph
 %global rlibdir  %{_libdir}/R/library
 
@@ -10,14 +10,19 @@ Group:            Sciences/Mathematics
 License:          Artistic-2.0
 URL:              http://bioconductor.org/packages/release/bioc/html/%{packname}.html
 Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/%{packname}_%{version}.tar.gz
-Requires:         R-methods R-stats R-tools R-utils R-XML R-RUnit R-cluster
-%if %{without bootstrap}
-Requires:         R-SparseM R-RBGL
+Requires:         R-methods 
+Requires:         R-methods R-stats R-tools R-utils 
+%if %{with bootstrap}
+Requires:         R-XML R-RUnit R-cluster 
+%else
+Requires:         R-SparseM R-XML R-RBGL R-RUnit R-cluster 
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex
-BuildRequires:    R-methods R-stats R-tools R-utils R-XML R-RUnit R-cluster
-%if %{without bootstrap}
-BuildRequires:    R-SparseM R-RBGL
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods
+BuildRequires:    R-methods R-stats R-tools R-utils 
+%if %{with bootstrap}
+BuildRequires:    R-XML R-RUnit R-cluster 
+%else
+BuildRequires:    R-SparseM R-XML R-RBGL R-RUnit R-cluster 
 %endif
 BuildRequires:    x11-server-xvfb
 
@@ -56,3 +61,16 @@ xvfb-run %{_bindir}/R CMD check %{packname}
 %{rlibdir}/%{packname}/libs
 %{rlibdir}/%{packname}/perf
 %{rlibdir}/%{packname}/unitTests
+
+
+%changelog
+* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.32.0-2
++ Revision: 778360
+- Rebuild with proper dependencies
+- Rebuild with proper dependencies
+
+* Fri Feb 17 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.32.0-1
++ Revision: 775846
+- Import R-graph
+- Import R-graph
+
