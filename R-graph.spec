@@ -3,13 +3,13 @@
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
-Version:          1.32.0
-Release:          3
+Version:          1.38.3
+Release:          1
 Summary:          graph: A package to handle graph data structures
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
 URL:              http://bioconductor.org/packages/release/bioc/html/%{packname}.html
-Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/%{packname}_%{version}.tar.gz
+Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/graph_%{version}.tar.gz
 Requires:         R-methods 
 Requires:         R-methods R-stats R-tools R-utils 
 %if %{with bootstrap}
@@ -19,6 +19,7 @@ Requires:         R-SparseM R-XML R-RBGL R-RUnit R-cluster
 %endif
 BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods
 BuildRequires:    R-methods R-stats R-tools R-utils 
+BuildRequires:    R-BiocGenerics
 %if %{with bootstrap}
 BuildRequires:    R-XML R-RUnit R-cluster 
 %else
@@ -73,4 +74,5 @@ xvfb-run %{_bindir}/R CMD check %{packname}
 + Revision: 775846
 - Import R-graph
 - Import R-graph
+
 
