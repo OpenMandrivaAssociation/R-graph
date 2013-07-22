@@ -4,7 +4,7 @@
 
 Name:             R-%{packname}
 Version:          1.38.3
-Release:          1
+Release:          2
 Summary:          graph: A package to handle graph data structures
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
@@ -12,6 +12,7 @@ URL:              http://bioconductor.org/packages/release/bioc/html/%{packname}
 Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/graph_%{version}.tar.gz
 Requires:         R-methods 
 Requires:         R-methods R-stats R-tools R-utils 
+Requires:         R-BiocGenerics
 %if %{with bootstrap}
 Requires:         R-XML R-RUnit R-cluster 
 %else
