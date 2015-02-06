@@ -4,7 +4,7 @@
 
 Name:             R-%{packname}
 Version:          1.38.3
-Release:          2
+Release:          3
 Summary:          graph: A package to handle graph data structures
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
