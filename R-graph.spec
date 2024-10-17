@@ -8,7 +8,7 @@ Release:          3
 Summary:          graph: A package to handle graph data structures
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
-URL:              http://bioconductor.org/packages/release/bioc/html/%{packname}.html
+URL:              https://bioconductor.org/packages/release/bioc/html/%{packname}.html
 Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/graph_%{version}.tar.gz
 Requires:         R-methods 
 Requires:         R-methods R-stats R-tools R-utils 
